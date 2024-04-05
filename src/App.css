@@ -1,3 +1,4 @@
+/* General Styles */
 .App {
   text-align: center;
 }
@@ -7,12 +8,14 @@
   pointer-events: none;
 }
 
+/* Logo Animation */
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
 
+/* Header Styles */
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -24,10 +27,12 @@
   color: white;
 }
 
+/* Link Styles */
 .App-link {
   color: #61dafb;
 }
 
+/* Logo Animation Keyframes */
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,4 +40,68 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* Navbar Styles */
+.navbar {
+  background-color: black;
+}
+
+.showanc {
+  text-decoration: none;
+  color: azure;
+  padding: 10px;
+}
+
+.showview {
+  margin-right: 2%; /* Adjusted for responsiveness */
+}
+
+.nav {
+  color: white;
+  font-size: 18px; /* Responsive font size */
+  text-shadow: 2px 2px 2px blue;
+}
+
+.nav:hover {
+  color: white;
+  font-size: 20px; /* Responsive font size */
+  text-shadow: 2px 2px 2px red;
+}
+
+/* Card Display Styles */
+.carddisp {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; /* Allows cards to wrap on smaller screens */
+  margin-top: 5vh; /* Adjusted for responsiveness */
+}
+
+.cardsubdiv {
+  margin: 35px;
+}
+
+/* Form Styles */
+.addform {
+  width: 90%; /* Adjusted for responsiveness */
+  max-width: 600px; /* Maximum width for larger screens */
+  margin: 0 auto; /* Center the form horizontally */
+  border-radius: 20px;
+  box-shadow: 2px 2px 20px black;
+  padding: 20px;
+  margin-top: 5vh; /* Adjusted for responsiveness */
+}
+
+.formdesc {
+  width: 110px;
+  background-color: aqua;
+  text-shadow: 1px 1px 1px rgb(44, 30, 197);
+}
+
+.tabtr{
+  padding-left: 50px;
+}
+
+.filedetails{
+  margin-left: 400px;
 }
