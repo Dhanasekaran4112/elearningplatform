@@ -4,8 +4,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import '../App.css';
 
-
-function Showfile() {
+function Filedetailcourse() {
     const [file, setFile] = useState([]);
     const [searchQuery, setSearchQuery] = useState('');
 
@@ -27,21 +26,20 @@ function Showfile() {
     );
 
     return (
-        <div className='overallcourse'>
-           
+        <div className='course'>
+            
             <input className='search'
                 type="text"
                 placeholder="Search files..."
                 value={searchQuery}
                 onChange={handleSearchChange}
-                
             />
-           
+            <p className='addfile'>If your a teacher<a href='/addfiles'>Add file</a> </p>
             
             <div className="carddisp">
                 {filteredFiles.map((file, index) => (
                     <div className='cardsubdiv' key={index}>
-                        <Card style={{ width: '13rem', height: '100%',border:'1px solid black',borderRadius:'40px' }}>
+                        <Card style={{ width: '13rem', height: '100%' }}>
                             <Card.Body>
                                 <Card.Title><img className='coursefileimg' src={file.image} height={220} width={180} alt="File Preview" /></Card.Title>
                                 <div className='coursefilename'>
@@ -51,8 +49,9 @@ function Showfile() {
                                 <Card.Text>
                                     <div className='assemble'><b>File Author:</b></div>{file.author}
                                 </Card.Text>
-                                <Button variant="primary"><a href={`/filedetail/${file.id}`} className='showanc'>VIEW</a></Button>
+                                <Button variant="primary"><a href={`/Filedetailu/${file.id}`} className='showanc'>VIEW</a></Button>
                                 </div>
+                                
                             </Card.Body>
                         </Card>
                     </div>
@@ -62,4 +61,4 @@ function Showfile() {
     );
 };
 
-export default Showfile;
+export default Filedetailcourse;

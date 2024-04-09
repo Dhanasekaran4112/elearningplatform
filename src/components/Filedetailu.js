@@ -4,7 +4,7 @@ import { useParams , useNavigate} from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import '../App.css';
 
-function Filedetail(){
+function Filedetailu(){
             const [file, setfile]=useState([]);
             const {id}=useParams();
             const nav=useNavigate();
@@ -45,22 +45,13 @@ function Filedetail(){
                     <td className='tabtr'>{file.author}</td>
                 </tr><br></br>
 
-                <tr>
-                    <th>Category:</th>
-                    <td className='tabtr'>{file.category}</td>
-                </tr><br></br>
-
-                <tr>
-                    <th>Description:</th>
-                    <td className='tabtr'>{file.description}</td>
-                </tr><br></br>
             </table>
             </center>
 
-            {/* <Button variant="primary" className='showview'><a href={`/updatefile/${file.id}`} className='showanc'>UPDATE</a></Button>
-            <Button variant="danger" onClick={()=>DeleteData(file.id)}>DELETE</Button> */}
+            <Button variant="primary" className='showview'><a href={`/updatefile/${file.id}`} className='showanc'>UPDATE</a></Button>
+            <Button variant="danger" onClick={()=>DeleteData(file.id)}>DELETE</Button>
         </div>
     )
 }
 
-export default Filedetail;
+export default Filedetailu;

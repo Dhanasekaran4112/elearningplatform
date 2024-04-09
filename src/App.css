@@ -8,6 +8,7 @@
   pointer-events: none;
 }
 
+
 /* Logo Animation */
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -43,42 +44,177 @@
 }
 
 /* Navbar Styles */
-.navbar {
-  background-color: black;
-}
 
+.head{
+  font-size: 30px;
+  color: white;
+}
+.navbar {
+ 
+  background-color:black;
+  width: 100%;
+  text-shadow: 2px 2px 2px blue;
+  
+}
+.nav-a,.nav-s {
+  color: white;
+  font-size: 18px; /* Responsive font size */
+  text-shadow: 2px 2px 2px blue;
+  width: fit-content; /* Adjusted to fit content */
+  position: relative;
+  right: 500px;
+} 
+
+.nav-a:hover ,.nav-s:hover {
+  font-size: 20px; /* Responsive font size */
+   text-shadow: 2px 2px 2px red; 
+   
+}
 .showanc {
   text-decoration: none;
   color: azure;
   padding: 10px;
 }
-
 .showview {
   margin-right: 2%; /* Adjusted for responsiveness */
 }
-
-.nav {
-  color: white;
-  font-size: 18px; /* Responsive font size */
-  text-shadow: 2px 2px 2px blue;
+.h0me{
+  background-color: #edc7b7;
+}
+.logo-prof{
+ width: 100%;
+ max-width: 600px;
+ float: left;
+ margin-left: 100px;
+ margin-top: 40px; 
+}
+.heading{
+  padding-top: 100px;
+  padding-right: 120px;
+  text-align: end;
+}
+.heading-p{
+  text-align:justify;
+  padding-right: 100px;
+  padding-top: 30px;
+  
+}
+.headercontent{
+  margin-top: 40px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  
+}
+/* Program and academic section styles */
+.pchead{
+ align-items: center;
+ padding-top: 200px;
+}
+.pcul{
+  display: flex;
+  list-style-type: none;
+  justify-content: center;
+  padding-top: 70px;
+}
+.pcli{
+  padding:20px; 
+}
+.progimage,.acaimage{
+  border-radius: 30px;
+  width: 150px;
+  height: 150px;
+  transition: transform 0.2s; /* Animation duration */
+}
+.progimage:hover,.acaimage:hover{
+  
+  transform: scale(1.2); /* 150% zoom*/
 }
 
-.nav:hover {
-  color: white;
-  font-size: 20px; /* Responsive font size */
-  text-shadow: 2px 2px 2px red;
+.pclink{
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  padding: 20px;
+}
+.pclinkli{
+  
+  justify-content: center;
+  list-style-type: none;
+  padding: 20px;
+}
+/* .pclinkli1{
+  padding-left: 25px;
+  
+}
+.pclinkli2{
+  padding-left: 140px;
+}
+.pclinkli3{
+  padding-left: 130px;
+}
+.pclinkli4{
+  padding-left: 140px;
+} */
+/* .pclinkli4b{
+  padding-left: 70px;
+} */
+/* About section styles */
+.aboutimg{
+  float: right;
+  width: 500px;
+  margin-right: 100px;
+  height: auto;
+ 
+  
+}
+.about{
+  padding-top: 40px;
+  text-align: justify;
+  padding-left: 100px;
+  padding-right: 20px;
 }
 
+
+.aboutcon{
+  display: flex;
+  text-align: justify;
+}
+.abouthead{
+  text-align: center;
+}
+
+.course{
+  background-color: #afd275;
+}
 /* Card Display Styles */
+.overallcourse{
+  background-color: #f4a460;
+}
+.search{
+  max-width: 600px;
+  width: 100%;
+  margin-right: 700px;
+  margin: 50px;
+  
+}
 .carddisp {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   flex-wrap: wrap; /* Allows cards to wrap on smaller screens */
   margin-top: 5vh; /* Adjusted for responsiveness */
 }
 
 .cardsubdiv {
   margin: 35px;
+  margin-left: 150px;
+  margin-bottom: 100px;
+}
+.addfile{
+  float: right;
+  padding-top: 50px;
+  padding-right: 10px;
 }
 
 /* Form Styles */
@@ -105,3 +241,9 @@
 .filedetails{
   margin-left: 400px;
 }
+.coursefileimg{
+  border-radius: 40px;
+  border: 4px solid black;
+}
+
+
