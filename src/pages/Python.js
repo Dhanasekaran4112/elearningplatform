@@ -4,8 +4,10 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import '../App.css';
 
+
 function Python() {
-    const [file, setFile] = useState({});
+    const [file, setFile] = useState([]);
+    const [searchQuery, setSearchQuery] = useState('');
 
     const getFile = async () => {
         const response = await axios.get('http://localhost:8000/api/4');
@@ -16,39 +18,35 @@ function Python() {
         getFile();
     }, []);
 
-    return (
-        <div>
-            <h1>Import Course</h1>
+    
 
-            <div className="carddispimp">
-                    <div className='cardsubdivimp'>
-                        <Card style={{ width: '18rem', height: '30rem' }}>
-                            <Card.Body>
-                                <Card.Title><img src={file.image} height={220} width={180} alt="File Preview" /></Card.Title>
-                                
-                                <Card.Text>
-                                    <div className='assemble'><b>File:</b></div><a href={file.file}>{file.name}</a>
-                                </Card.Text>
-                                
+    return (
+       
+           
+           
+           
+            
+            <div className="carddisp">
+                
+                    <div className='cardsubdiv'>
+                        <Card className='cardbody' style={{ width: '15rem', height: '100%',border:'1px solid black',borderRadius:'40px' }}>
+                            <Card.Body className='card-body'>
+                                <Card.Title><img className='coursefileimg' src={file.image} height={220} width={180} alt="File Preview" /></Card.Title>
+                                <div className='coursefilename'>
                                 <Card.Text>
                                     <div className='assemble'><b>File Name:</b></div>{file.name}
                                 </Card.Text>
                                 <Card.Text>
-                                    <div className='assemble'><b>File Category:</b></div>{file.category}
+                                    <div className='assemble'><b>File Author:</b></div>{file.author}
                                 </Card.Text>
-
-                                <Card.Text>
-                                    <div className='assemble'><b>Author:</b></div>{file.author}
-                                </Card.Text>
-                                <Card.Text>
-                                    <div className='assemble'><b>Description:</b></div>{file.description}
-                                </Card.Text>
-
+                                <Button variant="primary"><a href={`/filedetail/${file.id}`} className='showanc'>VIEW</a></Button>
+                                </div>
                             </Card.Body>
                         </Card>
                     </div>
+                
             </div>
-        </div>
+        
     );
 };
 

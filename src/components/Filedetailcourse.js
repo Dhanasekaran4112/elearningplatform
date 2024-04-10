@@ -39,8 +39,8 @@ function Filedetailcourse() {
             <div className="carddisp">
                 {filteredFiles.map((file, index) => (
                     <div className='cardsubdiv' key={index}>
-                        <Card style={{ width: '13rem', height: '100%' }}>
-                            <Card.Body>
+                        <Card className='cardbody' style={{ width: '15rem', height: '100%' }}>
+                            <Card.Body className='card-body'>
                                 <Card.Title><img className='coursefileimg' src={file.image} height={220} width={180} alt="File Preview" /></Card.Title>
                                 <div className='coursefilename'>
                                 <Card.Text>
@@ -55,6 +55,7 @@ function Filedetailcourse() {
                             </Card.Body>
                         </Card>
                     </div>
+                    
                 ))}
             </div>
         </div>

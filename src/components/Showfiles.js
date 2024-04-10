@@ -40,22 +40,25 @@ function Showfile() {
             
             <div className="carddisp">
                 {filteredFiles.map((file, index) => (
-                    <div className='cardsubdiv' key={index}>
-                        <Card style={{ width: '13rem', height: '100%',border:'1px solid black',borderRadius:'40px' }}>
-                            <Card.Body>
-                                <Card.Title><img className='coursefileimg' src={file.image} height={220} width={180} alt="File Preview" /></Card.Title>
-                                <div className='coursefilename'>
-                                <Card.Text>
-                                    <div className='assemble'><b>File Name:</b></div>{file.name}
-                                </Card.Text>
-                                <Card.Text>
-                                    <div className='assemble'><b>File Author:</b></div>{file.author}
-                                </Card.Text>
-                                <Button variant="primary"><a href={`/filedetail/${file.id}`} className='showanc'>VIEW</a></Button>
-                                </div>
-                            </Card.Body>
-                        </Card>
-                    </div>
+                    
+                        <div className='cardsubdiv' key={index}>
+                        <Card className='cardbody' style={{ width: '15rem', height: '100%',border:'1px solid black',borderRadius:'40px'}}>
+                        <Card.Body className='card-body'>
+                            <Card.Title><img className='coursefileimg' src={file.image} height={220} width={180} alt="File Preview" /></Card.Title>
+                            <div className='coursefilename'>
+                            <Card.Text>
+                                <div className='assemble'><b>File Name:</b></div>{file.name}
+                            </Card.Text>
+                            <Card.Text>
+                                <div className='assemble'><b>File Author:</b></div>{file.author}
+                            </Card.Text>
+                            <Button variant="primary"><a href={`/filedetail/${file.id}`} className='showanc'>VIEW</a></Button>
+                            </div>
+                        </Card.Body>
+                    </Card>
+                </div>
+               
+                    
                 ))}
             </div>
         </div>

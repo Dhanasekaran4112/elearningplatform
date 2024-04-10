@@ -51,7 +51,7 @@ function Addfile(){
     }
 
     return(
-        <div>
+        <div className="addfilemain"> 
             <h1>Add Files</h1>
 
             

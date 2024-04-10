@@ -24,9 +24,8 @@ function Filedetail(){
             nav('/')
         }
     return (
-        <div>
+        <div className='filedetailhead'>
             <h1>File Detail</h1>
-            <hr></hr>
             <p><img src={file.image} height={220} width={180}></img></p>
             <center className='filedetails'>
             <table width={700}>

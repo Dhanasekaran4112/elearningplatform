@@ -61,7 +61,7 @@ function Updatefiles(){
     }
 
     return(
-        <div>
+        <div className="update">
             <h1>UpdateFile</h1>
             <div className="addform">    
 

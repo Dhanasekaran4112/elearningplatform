@@ -46,8 +46,9 @@
 /* Navbar Styles */
 
 .head{
-  font-size: 30px;
+  font-size: 2rem;/* adjusted for responsiveness*/
   color: white;
+  margin-bottom: 1rem;
 }
 .navbar {
  
@@ -58,18 +59,19 @@
 }
 .nav-a,.nav-s {
   color: white;
-  font-size: 18px; /* Responsive font size */
+  font-size: 1rem; /* Responsive font size */
   text-shadow: 2px 2px 2px blue;
   width: fit-content; /* Adjusted to fit content */
   position: relative;
   right: 500px;
+  margin-right: 2rem;/*Increased spacing between items*/
 } 
 
 .nav-a:hover ,.nav-s:hover {
-  font-size: 20px; /* Responsive font size */
+  font-size: 1.1rem; /* Responsive font size */
    text-shadow: 2px 2px 2px red; 
-   
 }
+
 .showanc {
   text-decoration: none;
   color: azure;
@@ -79,7 +81,7 @@
   margin-right: 2%; /* Adjusted for responsiveness */
 }
 .h0me{
-  background-color: #edc7b7;
+  background-color: #ffe4e1;
 }
 .logo-prof{
  width: 100%;
@@ -88,77 +90,75 @@
  margin-left: 100px;
  margin-top: 40px; 
 }
-.heading{
-  padding-top: 100px;
-  padding-right: 120px;
-  text-align: end;
+/* Heading Styles */
+.heading {
+  font-family: cursive;
+  color: #00008b;
+  padding-top: 4rem; /* Adjusted for responsiveness */
+  padding-right: 7rem; /* Adjusted for responsiveness */
+  text-align: right; /* Adjusted for responsiveness */
+  /* animation: slideInFromLeft 1s ease-out forwards, typing 1.5s steps(10, end) forwards; Combined animations */
 }
-.heading-p{
-  text-align:justify;
-  padding-right: 100px;
-  padding-top: 30px;
-  
+
+/* Paragraph Styles */
+.heading-p {
+  text-align: justify;
+  padding-right: 2rem; /* Adjusted for responsiveness */
+  padding-top: 2rem; /* Adjusted for responsiveness */
+  /* animation: typing 1.5s steps(10, end) forwards; Set typing animation */
 }
-.headercontent{
-  margin-top: 40px;
+
+/* Container Styles */
+.headercontent,
+.heading-p {
+  margin-top: 4rem; /* Adjusted for responsiveness */
   width: 100%;
   max-width: 1000px;
-  margin: 0 auto;
-  
+  margin: 0 auto; /* Center the container horizontally */
 }
+
+/* Keyframes for Slide-In Animation */
+/* @keyframes slideInFromLeft {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+} */
+
+/* Keyframes for Typing Animation */
+/* @keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+} */
 /* Program and academic section styles */
 .pchead{
  align-items: center;
  padding-top: 200px;
+ color: #00008b;
+ 
 }
-.pcul{
-  display: flex;
+.pclink1,.pclink2{
   list-style-type: none;
-  justify-content: center;
-  padding-top: 70px;
-}
-.pcli{
-  padding:20px; 
-}
-.progimage,.acaimage{
-  border-radius: 30px;
-  width: 150px;
-  height: 150px;
-  transition: transform 0.2s; /* Animation duration */
-}
-.progimage:hover,.acaimage:hover{
-  
-  transform: scale(1.2); /* 150% zoom*/
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-left: 150px;
+  padding-top: 50px;
+  padding-bottom: 0px;
+  gap: 7rem;
+  margin-bottom: 0px;
 }
 
-.pclink{
-  display: flex;
-  justify-content: center;
-  list-style-type: none;
-  padding: 20px;
-}
-.pclinkli{
-  
-  justify-content: center;
-  list-style-type: none;
-  padding: 20px;
-}
-/* .pclinkli1{
-  padding-left: 25px;
-  
-}
-.pclinkli2{
-  padding-left: 140px;
-}
-.pclinkli3{
-  padding-left: 130px;
-}
-.pclinkli4{
-  padding-left: 140px;
-} */
-/* .pclinkli4b{
-  padding-left: 70px;
-} */
+
+
 /* About section styles */
 .aboutimg{
   float: right;
@@ -173,6 +173,7 @@
   text-align: justify;
   padding-left: 100px;
   padding-right: 20px;
+ 
 }
 
 
@@ -182,6 +183,7 @@
 }
 .abouthead{
   text-align: center;
+  color: #00008b;
 }
 
 .course{
@@ -189,33 +191,85 @@
 }
 /* Card Display Styles */
 .overallcourse{
-  background-color: #f4a460;
+  background-color: #f8b88b;
 }
 .search{
   max-width: 600px;
   width: 100%;
   margin-right: 700px;
-  margin: 50px;
-  
+  margin: 50px; 
+  border-radius: 20px;
 }
 .carddisp {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
+  padding-right: 20px;
+  border-radius: 40px;
+  padding-bottom: 10px;
   justify-content: center;
-  flex-wrap: wrap; /* Allows cards to wrap on smaller screens */
-  margin-top: 5vh; /* Adjusted for responsiveness */
+  gap: 5rem; /* Add spacing between cards */
 }
 
 .cardsubdiv {
-  margin: 35px;
-  margin-left: 150px;
-  margin-bottom: 100px;
+  width: 15rem;
+  display: flex;
+  /* justify-content: center; */
+  flex-direction: row;
+  border: 1px solid black;
+  border-radius: 40px;
+  
+  overflow: hidden; /* Hide overflow content */
+  transition: transform 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+.cardsubdiv:hover {
+  transform: translatex(20px); /* Move card slightly rightwards on hover */
+}
+
+.card-body {
+  height: 100%;
+  background-color:#ffdb58;/* card background color*/
+}
+
+.cardbody:hover {
+  box-shadow: 0px 8px 15px rgba(56, 124, 199, 0.7); /* Add shadow on hover */
+}
+/* Card Image Styles */
+.coursefileimg {
+  width: 100%;
+  height: 200px;
+}
+.cardbody{
+  background: rgba(116,189,164,0.7);/*hovering color of card */
+}
+
+/* Card Text Styles */
+.coursefilename {
+  padding: 1rem;
+}
+
+/* Button Styles */
+.showanc {
+  text-decoration: none;
+  color: white;
+}
+
+/* Button Hover Styles */
+.showanc:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.coursefilename{
+  background-color: #ff6961;
 }
 .addfile{
-  float: right;
-  padding-top: 50px;
-  padding-right: 10px;
+  bottom:-30px;
+  padding-bottom: 30px;
+  font-size: 17px;
 }
+
+  
 
 /* Form Styles */
 .addform {
@@ -226,6 +280,7 @@
   box-shadow: 2px 2px 20px black;
   padding: 20px;
   margin-top: 5vh; /* Adjusted for responsiveness */
+  background-color: #ddadaf;
 }
 
 .formdesc {
@@ -237,13 +292,38 @@
 .tabtr{
   padding-left: 50px;
 }
-
-.filedetails{
-  margin-left: 400px;
+.filedetails {
+  margin: 0 auto; /* Center the element horizontally */
+  width: 90%; /* Adjusted for responsiveness */
+  max-width: 500px; /* Maximum width for larger screens */
+  padding: 20px; /* Add padding for better spacing */
+  background-color: #ddadaf; /* Background color */
+  border-radius: 20px; /* Add border radius for rounded corners */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add box shadow for depth */
 }
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .filedetails {
+    width: 100%; /* Set full width for smaller screens */
+    margin-left: auto; /* Reset margin for smaller screens */
+    margin-right: auto; /* Reset margin for smaller screens */
+  }
+}
+
 .coursefileimg{
   border-radius: 40px;
   border: 4px solid black;
 }
 
+
+.addfilemain,.update{
+  background-color: #fad6a5;
+  height: 570px;
+
+}
+.filedetailhead,.filedetailheadup{
+  background-color: #fad6a5;
+  height: 570px;
+}
 

@@ -24,7 +24,7 @@ function Filedetailu(){
             nav('/')
         }
     return (
-        <div>
+        <div className='filedetailheadup'>
             <h1>File Detail</h1>
             <hr></hr>
             <p><img src={file.image} height={220} width={180}></img></p>
@@ -46,10 +46,11 @@ function Filedetailu(){
                 </tr><br></br>
 
             </table>
-            </center>
-
             <Button variant="primary" className='showview'><a href={`/updatefile/${file.id}`} className='showanc'>UPDATE</a></Button>
             <Button variant="danger" onClick={()=>DeleteData(file.id)}>DELETE</Button>
+            </center>
+
+            
         </div>
     )
 }
