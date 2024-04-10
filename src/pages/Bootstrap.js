@@ -7,10 +7,9 @@ import '../App.css';
 
 function Bootstrap() {
     const [file, setFile] = useState([]);
-    const [searchQuery, setSearchQuery] = useState('');
 
     const getFile = async () => {
-        const response = await axios.get('http://localhost:8000/api/10');
+        const response = await axios.get('http://localhost:8000/api/12');
         setFile(response.data);
     };
 
@@ -21,10 +20,6 @@ function Bootstrap() {
     
 
     return (
-       
-           
-           
-           
             
             <div className="carddisp">
                 

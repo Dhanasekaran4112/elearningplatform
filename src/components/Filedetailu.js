@@ -44,7 +44,15 @@ function Filedetailu(){
                     <th>Author:</th>
                     <td className='tabtr'>{file.author}</td>
                 </tr><br></br>
+                <tr>
+                    <th>Category:</th>
+                    <td className='tabtr'>{file.category}</td>
+                </tr><br></br>
 
+                <tr>
+                    <th>Description:</th>
+                    <td className='tabtr'>{file.description}</td>
+                </tr><br></br>
             </table>
             <Button variant="primary" className='showview'><a href={`/updatefile/${file.id}`} className='showanc'>UPDATE</a></Button>
             <Button variant="danger" onClick={()=>DeleteData(file.id)}>DELETE</Button>

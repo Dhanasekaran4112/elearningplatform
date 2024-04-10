@@ -7,10 +7,9 @@ import '../App.css';
 
 function Javascript() {
     const [file, setFile] = useState([]);
-    const [searchQuery, setSearchQuery] = useState('');
 
     const getFile = async () => {
-        const response = await axios.get('http://localhost:8000/api/8');
+        const response = await axios.get('http://localhost:8000/api/11');
         setFile(response.data);
     };
 

@@ -7,10 +7,9 @@ import '../App.css';
 
 function Machine() {
     const [file, setFile] = useState([]);
-    const [searchQuery, setSearchQuery] = useState('');
 
     const getFile = async () => {
-        const response = await axios.get('http://localhost:8000/api/12');
+        const response = await axios.get('http://localhost:8000/api/22');
         setFile(response.data);
     };
 

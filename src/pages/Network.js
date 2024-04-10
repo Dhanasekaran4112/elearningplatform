@@ -7,10 +7,9 @@ import '../App.css';
 
 function Network() {
     const [file, setFile] = useState([]);
-    const [searchQuery, setSearchQuery] = useState('');
 
     const getFile = async () => {
-        const response = await axios.get('http://localhost:8000/api/15');
+        const response = await axios.get('http://localhost:8000/api/23');
         setFile(response.data);
     };
 

@@ -7,10 +7,9 @@ import '../App.css';
 
 function Iot() {
     const [file, setFile] = useState([]);
-    const [searchQuery, setSearchQuery] = useState('');
 
     const getFile = async () => {
-        const response = await axios.get('http://localhost:8000/api/14');
+        const response = await axios.get('http://localhost:8000/api/20');
         setFile(response.data);
     };
 
