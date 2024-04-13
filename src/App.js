@@ -17,6 +17,9 @@ import Iot from './pages/Iot';
 import Network from './pages/Network';
 import Filedetailcourse from './components/Filedetailcourse';
 import Filedetailu from './components/Filedetailu';
+import Signup from './components/screens/SignupScreen';
+import Login from './components/screens/SigninScreen';
+
 
 
 
@@ -42,6 +45,8 @@ function App() {
           <Route path='/addfiles' element={<Addfile/>}/>
           <Route path='/filedetail/:id' element={<FileDetail/>}/>
           <Route   path='/updatefile/:id' element={<Updatefiles/>}/>
+          <Route path='/signup' element={<Signup/>}/>
+          <Route path='/signin' element={<Login/>}/>
         </Routes>
       </Router>
     </div>
