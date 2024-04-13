@@ -1,5 +1,7 @@
 from django.db import models
 
+
+
 class elearningtable(models.Model):
     image=models.ImageField(upload_to='uploads/files', null=False, blank=False)
     file=models.FileField(upload_to='uploads/files', null=False, blank=False)

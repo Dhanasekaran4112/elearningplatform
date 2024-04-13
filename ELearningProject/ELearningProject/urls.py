@@ -13,5 +13,7 @@ route.register("",elearningview,basename="elearningview")
 
 
 urlpatterns = [
+    path('admin/', admin.site.urls),
     path('api/', include(route.urls)),
+    path('authapi/', include('ELearningApp.urls')),
 ]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
