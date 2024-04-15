@@ -1,10 +1,31 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Container, Row, Col, Button, Form, Card } from 'react-bootstrap';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Message from '../files/Message';
 import { validPassword } from '../files/Regex';
-import { signup } from '../files/userActions';
-import { Provider,useDispatch, useSelector } from 'react-redux';
+
+// Example implementation of signup function
+const signup = (fname, lname, email, password) => {
+    return new Promise((resolve, reject) => {
+        fetch('http://127.0.0.1:8000/authapi/users/register/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ fname, lname, email, password })
+        })
+        .then(response => {
+            if (response.ok) {
+                resolve(); // Resolve the Promise if the request is successful
+            } else {
+                reject(new Error('Signup failed')); // Reject the Promise with an error if the request fails
+            }
+        })
+        .catch(error => {
+            reject(error); // Reject the Promise if an error occurs during the request
+        });
+    });
+};
 
 function Signup() {
     const navigate = useNavigate();
@@ -15,31 +36,22 @@ function Signup() {
     const [pass2, setPass2] = useState("");
     const [message, setMessage] = useState("");
 
-    const dispatch = useDispatch();
-    const location = useLocation();
-
-    const redirect = location.search ? location.search.split("=")[1] : "/showfiles";
-
-    const { error, loading, userInfo } = useSelector((state) => state.userSignup); // Destructure state properly
-
-    useEffect(() => {
-        if (userInfo) {
-            navigate("/signin");
-        }
-    }, [userInfo, navigate, redirect]);
-
     const submitHandler = (e) => {
         e.preventDefault();
 
         if (pass1 !== pass2) {
             setMessage("Passwords Do not Match");
-            navigate("/signup");
         } else if (!validPassword.test(pass1)) {
             setMessage("Invalid Password");
         } else {
-            dispatch(signup(fname, lname, email, pass1));
-            setMessage("Register Success");
-            navigate("/login");
+            signup(fname, lname, email, pass1)
+                .then(() => {
+                    setMessage("Register Success");
+                    navigate("/signin");
+                })
+                .catch(error => {
+                    setMessage("An error occurred while signing up. Please try again.");
+                });
         }
     };
 
@@ -51,7 +63,7 @@ function Signup() {
                     <Card>
                         <Card.Header as="h3" className='text-center bg-black text-light'>Signup</Card.Header>
                         <Card.Body>
-                            {message && <Message variant='danger'>{error}</Message>}
+                            {message && <Message variant='danger'>{message}</Message>}
                             <Form onSubmit={submitHandler}>
                                 <Form.Group className="mb-3" controlId="fname">
                                     <Form.Label>First Name</Form.Label>
@@ -92,5 +104,5 @@ function Signup() {
         </Container>
     );
 }
- // Export the wrapped component
+
 export default Signup;
